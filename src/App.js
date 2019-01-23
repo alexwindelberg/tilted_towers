@@ -6,6 +6,12 @@ import Body from './components/card_body'
 
 
 class App extends Component {
+
+  constructor(props)
+  {
+    super(props);
+  }
+
   render() {
     return (
       <div className="App">

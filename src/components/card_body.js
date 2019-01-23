@@ -1,8 +1,14 @@
 import React from 'react';
 import { Table } from 'reactstrap'
 
+/*
+    The idea here is that we are able to organize the data
+    in a table format but we will need to create a component
+    to organize the tuples. It's possible to do here but it will
+    be simpler.
+*/
 const card_body = () => (
-    <Table>
+    <Table dark>
         <thead>
             <tr>
                 <th>Wins</th>
