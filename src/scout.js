@@ -9,7 +9,6 @@ class Scout {
       scope: 'public.read'
     });
 
-    var statsList = [];
     const queryList = ['p2.br.m0.weekly', 'p10.br.m0.weekly', 'p9.br.m0.weekly'];
     var titles = await _Scout.titles.list();
     var fortnite = titles.find( t => t.slug === 'fortnite' );
@@ -39,30 +38,47 @@ class Scout {
       .then( ( data ) => {
         var playerId = data.results[ 0 ].player.playerId;
         
-        queryList.map( gameModes => {
-          return _Scout.players.get( fortnite.id, playerId, gameModes )
-            .then( ( data ) => {
+        /*
+          Get the data from the database then stringify followed by parse
+          store these in the promises var.
+        */
+        let promises = queryList.map( gameModes => {
+            return _Scout.players.get( fortnite.id, playerId, gameModes )
+              .then( ( data ) => {
+                  return JSON.parse(JSON.stringify(data.segments));
+              })
+          })
 
-              const Data = JSON.parse(JSON.stringify(data.segments));
-              const obj = {
-                GameMode      : Data[0].metadata[0].displayValue,
-                MatchesPlayed : Data[0].stats[2].value,
-                Kills         : Data[0].stats[0].value,
-                KDratio       : Data[0].stats[8].value,
-                Wins          : Data[0].stats[3].value,
-                WinRatio      : (Data[0].stats[3].value)/(Data[0].stats[2].value) * 100,
-                Score         : Data[0].stats[1].value,
-              }
-              return obj;
+        /*
+          iterate through the data and get the data we need store in objs to be returned
+        */
+        return Promise.all(promises).then((data) => {
+          
+          return data.map( tuple => {
+            const obj = {
+              GameMode      : tuple[0].metadata[0].displayValue,
+              MatchesPlayed : tuple[0].stats[2].value,
+              Kills         : tuple[0].stats[0].value,
+              KDratio       : tuple[0].stats[8].value,
+              Wins          : tuple[0].stats[3].value,
+              WinRatio      : (tuple[0].stats[3].value)/(tuple[0].stats[2].value) * 100,
+              Score         : tuple[0].stats[1].value,
+            }
+            return obj;
+          })
 
-            }).then( 
-              (GameTypeStats) => { statsList.push(GameTypeStats);
-            });
+        }).catch(error => { 
+          console.log(error.message)
         });
-      }).finally(() => {
-         
+
+      }).then(data => {
+        /*
+          Place call back here
+        */
+        console.log(data);
       });
   }
 }
+
 
 export default Scout;
