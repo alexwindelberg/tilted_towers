@@ -1,23 +1,23 @@
 import React from 'react'
 import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
 
-const header = (props) => (
+const card_header = (props) => (
 
       <div>
         <Nav tabs>
           <NavItem>
             <NavLink>
-              Tab1
+              Solo
             </NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={props.gameType}>
           <TabPane tabId={props.gameType}>
-                
+          
           </TabPane>
         </TabContent>
       </div>
 
 );
 
-export default header;
+export default card_header;
