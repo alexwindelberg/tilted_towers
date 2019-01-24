@@ -1,6 +1,4 @@
 import React from 'react';
-import { Table } from 'reactstrap'
-
 /*
     The idea here is that we are able to organize the data
     in a table format but we will need to create a component

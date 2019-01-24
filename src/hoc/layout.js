@@ -63,17 +63,14 @@ class Layout extends Component {
 
         }).then((d) => {
             this.setState({ data: d });
-            console.log(this.state.data)
         });
     }
 
     /* Also for loop through these instead of hard coding */
-
     
 
-    render () {
 
-        console.log(this.state.data);
+    render () {
 
         return (
             <div className="table" >
