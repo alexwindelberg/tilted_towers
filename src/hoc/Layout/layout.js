@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import Card from '../components/card_container'
+import Card from '../../components/card_container'
+import Aux from '../Aux/aux'
+import Spinner from '../../UI/Spinner/spinner'
+
 const _Scout = window.Scout;
 
 
@@ -62,30 +65,38 @@ class Layout extends Component {
               });
 
         }).then((d) => {
-            this.setState({ data: d });
+            this.setState({ 
+                data: d,
+                loading: false
+            });
         });
     }
 
-    /* Also for loop through these instead of hard coding */
+    /* Also for loop through these instead of hard coding 
+                        <div className="col-sm">
+                            <Card/>
+                        </div>
+                        <div className="col-sm">
+                            <Card/>
+                        </div>
+                        <div className="col-sm">
+                            <Card/>
+                        </div>
+    ;*/
     
 
 
     render () {
 
+        let tableStats = <div>THIS IS W/E </div>
+        if( this.state.loading ) {
+            tableStats = <Spinner />;
+        }
+
         return (
-            <div className="table" >
-                <div className="row">
-                    <div className="col-sm">
-                        <Card/>
-                    </div>
-                    <div className="col-sm">
-                        <Card/>
-                    </div>
-                    <div className="col-sm">
-                        <Card/>
-                    </div>
-                </div>
-            </div>
+            <Aux>
+                {tableStats}
+            </Aux>
         )
     }
 
