@@ -6,7 +6,7 @@ class Layout extends Component {
     /* Need to pass the data here */
     render () {
         return (
-            <div className="container">
+            <div className="table" >
                 <div className="row">
                     <div className="col-sm">
                         <Card/>

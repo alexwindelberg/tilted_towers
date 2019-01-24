@@ -1,12 +1,14 @@
 import React from 'react'
 
 
-const card_header = (props) => (
+const card_header = (props) => {
 
-      <div>
+    return (
+        <div className="card-header border-success" style={{backgroundColor : "green"}}>
+            Featured
+        </div>
+    )
 
-      </div>
-
-);
+}
 
 export default card_header;

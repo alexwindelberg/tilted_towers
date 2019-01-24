@@ -8,23 +8,17 @@ import { Table } from 'reactstrap'
     be simpler.
 */
 const card_body = () => (
-    <Table dark>
-    
-        <thead>
-            <tr>
-                <th>Wins</th>
-                <th>Win Rate</th>
-                <th>Matches</th>
-            </tr>
-            <tr>
-                <th>Top 10</th>
-                <th>K/D Ratio</th>
-                <th>Kills</th>
-            </tr>
-        </thead>
-
-
-    </Table>
+    <div className="card-body bg-dark">
+        <h5 className="card-title">Special title treatment</h5>
+        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+    </div>
 )
 
 export default card_body
