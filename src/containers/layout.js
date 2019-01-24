@@ -19,7 +19,7 @@ class Layout extends Component {
         };
         
     }
-
+    /* Need to pass the data here */
     async componentDidMount() {
         await _Scout.configure({
                          clientId: 'af2ef8ea-a458-434e-8c00-26fb8f938eb1',
@@ -67,13 +67,14 @@ class Layout extends Component {
         });
     }
 
-
-
-    /* Need to pass the data here */
     /* Also for loop through these instead of hard coding */
+
+    
+
     render () {
 
         console.log(this.state.data);
+
         return (
             <div className="table" >
                 <div className="row">

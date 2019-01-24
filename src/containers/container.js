@@ -5,7 +5,7 @@ import '../styles/custom.scss'
 class Container extends Component {
     render () {
         return (
-            <div className="table-container">
+            <div className="layout-container">
                 <Layout />
             </div>
         )
