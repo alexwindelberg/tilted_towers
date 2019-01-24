@@ -9,6 +9,7 @@ import { Table } from 'reactstrap'
 */
 const card_body = () => (
     <Table dark>
+    
         <thead>
             <tr>
                 <th>Wins</th>

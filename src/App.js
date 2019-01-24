@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import Header from './components/card_header'
-import Body from './components/card_body'
+import Layout from './containers/layout'
+import Scout from './scout'
 
 
 class App extends Component {
 
-  constructor(props)
-  {
-    super(props);
+  state = {
+    data : ''
+  };
+
+  componentDidMount() {
+    if(!this.state.data) {
+      Scout.init().then( d => this.setState({
+        data: d
+      }));
+    }
+    console.log(this.state.data);
   }
 
   render() {
     return (
       <div className="App">
-        <Header gameType="solo" />
-        <Body />
+          <Layout />
       </div>
     );
   }

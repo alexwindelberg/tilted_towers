@@ -34,7 +34,7 @@ class Scout {
           p9.br.m0.weekly (Squad, Current Season) 
     */
 
-    _Scout.players.search( 'Ninja', 'epic', 'pc', fortnite.id, true, true )
+    return _Scout.players.search( 'Ninja', 'epic', 'pc', fortnite.id, true, true )
       .then( ( data ) => {
         var playerId = data.results[ 0 ].player.playerId;
         
@@ -71,12 +71,7 @@ class Scout {
           console.log(error.message)
         });
 
-      }).then(data => {
-        /*
-          Place call back here
-        */
-        console.log(data);
-      });
+      })
   }
 }
 
