@@ -2,6 +2,10 @@ const _Scout = window.Scout;
 
 class Scout {
 
+  constructor () {
+    this.data = null;
+  }
+
   static async init() {
     await _Scout.configure({
       clientId: 'af2ef8ea-a458-434e-8c00-26fb8f938eb1',
@@ -34,7 +38,7 @@ class Scout {
           p9.br.m0.weekly (Squad, Current Season) 
     */
 
-    return _Scout.players.search( 'Ninja', 'epic', 'pc', fortnite.id, true, true )
+    _Scout.players.search( 'Ninja', 'epic', 'pc', fortnite.id, true, true )
       .then( ( data ) => {
         var playerId = data.results[ 0 ].player.playerId;
         
@@ -71,6 +75,8 @@ class Scout {
           console.log(error.message)
         });
 
+      }).then( (data) => {
+          this.data = data;
       })
   }
 }

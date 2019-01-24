@@ -6,7 +6,19 @@ class Layout extends Component {
     /* Need to pass the data here */
     render () {
         return (
-            <Card />
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm">
+                        <Card/>
+                    </div>
+                    <div className="col-sm">
+                        <Card/>
+                    </div>
+                    <div className="col-sm">
+                        <Card/>
+                    </div>
+                </div>
+            </div>
         )
     }
 

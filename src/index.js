@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import './styles/custom.scss'
 import Scout from './scout';
 import * as serviceWorker from './serviceWorker';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -14,5 +14,5 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 // Example API call using Scout SDK.
-//let promise = Scout.init();
-//console.log(promise);
+//Scout.init();
+//console.log(Scout.getData());
