@@ -7,7 +7,7 @@ class Card_Container extends Component {
 
     render() {
         return (
-            <div className="card border-success ">
+            <div className="card border-success">
                 <Header />
                 <Body />
             </div>

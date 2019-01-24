@@ -9,7 +9,7 @@ import { Table } from 'reactstrap'
 */
 const card_body = () => (
     <div className="card-body bg-dark">
-        <table class="table table-dark">
+        <table className="table table-dark">
             <thead>
                 <tr>
                     <th scope="col">K/D Ratio : </th>
