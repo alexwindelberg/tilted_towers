@@ -9,15 +9,28 @@ import { Table } from 'reactstrap'
 */
 const card_body = () => (
     <div className="card-body bg-dark">
-        <h5 className="card-title">Special title treatment</h5>
-        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">K/D Ratio : </th>
+                    <th scope="col">Wins : </th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr>
+                <td>Wins</td>
+                <td>Top 10</td>
+            </tr>
+            <tr>
+                <td>Win Rate</td>
+                <td>K/D Ratio</td>
+            </tr>
+            <tr>
+                <td>Matches</td>
+                <td>Kills</td>
+            </tr>
+  </tbody>
+        </table>
     </div>
 )
 
