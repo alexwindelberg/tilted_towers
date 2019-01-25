@@ -110,7 +110,7 @@ class Layout extends Component {
         }
 
         return (
-            <div class="card-group" >
+            <div className="card-group" >
                     {cards}
             </div>
         )

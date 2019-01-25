@@ -1,5 +1,5 @@
 $f_theme_color : #2b2e37;
-$s_theme_color : #8f9094;
+$s_theme_color : #F9A727;
 $t_theme_color : #ff4644;
 $f_card_color  : #41AF57;
 $s_card_color  : #9042A6;
@@ -37,6 +37,17 @@ $font-family-base : 'Luckiest Guy', cursive;
         margin-left: 2vh;
         margin-right: 2vh;
     }
+}
+.container-header {
+
+    background-color: $s_theme_color;
+    height: 20vh;
+    margin-bottom: 1vh;
+    text-align: center;
+    line-height: 20vh;
+    color : #ffff;
+    font-size: 90px;
+
 }
 
 
