@@ -81,11 +81,8 @@ class Layout extends Component {
             cards = <Spinner />
         }
         if(!this.state.loading){
-            console.log(this.state.data[0])
-            
         cards = (
                 <Aux>
-                    <div className="col-sm">
                         { 
                             this.state.data.map(stats => {
                             return <Card   
@@ -99,18 +96,15 @@ class Layout extends Component {
                                         key={stats.KDratio}/>
                             })
                         }
-                    </div>
                 </Aux>
             )
 
         }
 
         return (
-            <Aux>
-                <div className="row">
+            <div class="card-group" >
                     {cards}
-                </div>
-            </Aux>
+            </div>
         )
     }
 
