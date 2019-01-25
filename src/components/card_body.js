@@ -10,25 +10,25 @@ const card_body = (props) => (
         <table className="table table-dark">
             <thead style={{background : "#EA2774"}}>
                 <tr>
-                    <th scope="col">K/D Ratio : <br /> {props.kdratio}</th>
-                    <th scope="col">Wins :  <br />{props.wins} </th>
+                    <th scope="col">K/D Ratio :  <br /> {props.kdratio} </th>
+                    <th scope="col">Wins      :  <br /> {props.wins}    </th>
                 </tr>
             </thead>
-        <tbody>
-            <tr>
-                <td>Wins  :  <br />{props.wins}</td>
-                <td>Score :  <br />{props.score}</td>
-            </tr>
-            <tr>
-                <td>Win Rate  :  <br />{props.winRate}</td>
-                <td>K/D Ratio :  <br />{props.kdratio}</td>
-            </tr>
-            <tr>
-                <td>Matches : <br />{props.matchesPlayed}</td>
-                <td>Kills   : <br />{props.kills}</td>
-            </tr>
-  </tbody>
-        </table>
+            <tbody>
+                    <tr>
+                        <td>Wins      :  <br />  {props.wins}           </td>
+                        <td>Score     :  <br />  {props.score}          </td>
+                    </tr>
+                    <tr>
+                        <td>Win Rate  :  <br />   {props.winRate}       </td>
+                        <td>K/D Ratio :  <br />   {props.kdratio}       </td>
+                    </tr>
+                    <tr>
+                        <td>Matches   :  <br />   {props.matchesPlayed} </td>
+                        <td>Kills     :  <br />   {props.kills}         </td>
+                    </tr>
+            </tbody>
+            </table>
     </div>
 )
 

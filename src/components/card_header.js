@@ -1,6 +1,11 @@
 import React, {Component} from 'react'
 
-
+/* 
+    Card Component - I wanted to add a little bit of dynamic in color in the headings so
+    I created this little function that fires off before the component is loaded and just
+    checks to see which type of game is being passed through so I can assign it a different
+    color.
+*/
 class Card_Header extends Component {
 
     state = {

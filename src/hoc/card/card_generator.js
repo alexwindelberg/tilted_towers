@@ -5,6 +5,11 @@ import Card from './card';
 
 const _Scout = window.Scout;
 
+/*
+    Retrive the data, store and pass it on to the components that require them.
+    looping through all the data when complete with requests and show a spinner to
+    let the client know that stuff is being done behind the scene
+*/
 
 class Layout extends Component {
 
@@ -45,7 +50,11 @@ class Layout extends Component {
                        console.log(error.message)
                     });
             })
-
+            /*
+                When complete retriving the data from all objects returns a promise to
+                be used later, nesting was kept'd to a minimum as to much nesting can
+                over complicate promises
+            */
             return Promise.all(promises).then((data) => {
           
                 return data.map( tuple => {
@@ -77,6 +86,11 @@ class Layout extends Component {
 
     render () {
 
+        /*
+            Cards will hold the cards in when the component is complete but in the mean time the default is a
+            silly div with hello but it's never shown as the spinner is shown when state.loading is true.
+            loading is true by default so as soon as we come into the app it should be triggered
+        */
         let cards = <div>hello</div>
         if(this.state.loading) {
             cards = <Spinner />
