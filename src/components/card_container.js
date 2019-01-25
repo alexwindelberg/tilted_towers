@@ -6,7 +6,7 @@ import Body from '../components/card_body'
 const Card_Container = (props) => {
 
         return (
-            <div className="card border-success">
+            <div className="card ">
                 <Header gameType={props.gameType} />
                 <Body 
                     kdratio={props.kdratio}
