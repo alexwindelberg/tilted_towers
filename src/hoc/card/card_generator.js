@@ -17,6 +17,7 @@ class Layout extends Component {
                 p9.br.m0.weekly (Squad, Current Season) 
             */
             queryList : ['p2.br.m0.weekly', 'p10.br.m0.weekly', 'p9.br.m0.weekly'],
+            gamemodes : ['Solo', 'Duo', 'Squad'],
             data      : [],
             loading   : true, 
         };
@@ -85,8 +86,15 @@ class Layout extends Component {
                 <Aux>
                         { 
                             this.state.data.map(stats => {
+                            
+                            let GameType = this.state.gamemodes.map(types => {
+                                    if(stats.GameMode.includes(types))
+                                        return types;
+                                }
+                            )
+
                             return <Card   
-                                        gameType={stats.GameMode}
+                                        gameType={GameType}
                                         kdratio={stats.KDratio}
                                         kills={stats.Kills}
                                         matchesPlayed={stats.MatchesPlayed}
