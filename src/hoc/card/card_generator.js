@@ -95,11 +95,11 @@ class Layout extends Component {
 
                             return <Card   
                                         gameType={GameType}
-                                        kdratio={stats.KDratio}
+                                        kdratio={ Math.ceil(stats.KDratio * 100) / 100 }
                                         kills={stats.Kills}
                                         matchesPlayed={stats.MatchesPlayed}
                                         score={stats.Score}
-                                        winRate={stats.WinRatio}
+                                        winRate={ Math.ceil(stats.WinRatio * 100) / 100 }
                                         wins={stats.Wins} 
                                         key={stats.KDratio}/>
                             })
