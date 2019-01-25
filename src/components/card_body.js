@@ -5,27 +5,27 @@ import React from 'react';
     to organize the tuples. It's possible to do here but it will
     be simpler.
 */
-const card_body = () => (
+const card_body = (props) => (
     <div className="card-body bg-dark">
         <table className="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">K/D Ratio : </th>
-                    <th scope="col">Wins : </th>
+                    <th scope="col">K/D Ratio :  {props.kdratio}</th>
+                    <th scope="col">Wins :  {props.wins} </th>
                 </tr>
             </thead>
         <tbody>
             <tr>
-                <td>Wins</td>
-                <td>Top 10</td>
+                <td>Wins :  {props.wins}</td>
+                <td>Score :  {props.score}</td>
             </tr>
             <tr>
-                <td>Win Rate</td>
-                <td>K/D Ratio</td>
+                <td>Win Rate :  {props.winRate}</td>
+                <td>K/D Ratio :  {props.kdratio}</td>
             </tr>
             <tr>
-                <td>Matches</td>
-                <td>Kills</td>
+                <td>Matches : {props.matchesPlayed}</td>
+                <td>Kills : {props.kills}</td>
             </tr>
   </tbody>
         </table>

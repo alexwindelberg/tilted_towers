@@ -1,19 +1,24 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Header from '../components/card_header'
 import Body from '../components/card_body'
 
 
-class Card_Container extends Component {
+const Card_Container = (props) => {
 
-    render() {
         return (
             <div className="card border-success">
-                <Header />
-                <Body />
+                <Header gameType={props.gameType} />
+                <Body 
+                    kdratio={props.kdratio}
+                    wins={props.wins}
+                    score={props.score}
+                    winRate={props.winRate}
+                    kills={props.kills}
+                    matchesPlayed={props.matchesPlayed}
+                    />
             </div>
         )
-    }
-
 }
+
 
 export default Card_Container;

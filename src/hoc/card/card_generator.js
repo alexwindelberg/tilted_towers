@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Card from '../../components/card_container'
-import Aux from '../Aux/aux'
-import Spinner from '../../UI/Spinner/spinner'
+import Aux from '../aux/aux'
+import Spinner from '../../UI/spinner/spinner'
+import Card from './card';
 
 const _Scout = window.Scout;
 
@@ -72,30 +72,44 @@ class Layout extends Component {
         });
     }
 
-    /* Also for loop through these instead of hard coding 
-                        <div className="col-sm">
-                            <Card/>
-                        </div>
-                        <div className="col-sm">
-                            <Card/>
-                        </div>
-                        <div className="col-sm">
-                            <Card/>
-                        </div>
-    ;*/
-    
 
 
     render () {
 
-        let tableStats = <div>THIS IS W/E </div>
-        if( this.state.loading ) {
-            tableStats = <Spinner />;
+        let cards = <div>hello</div>
+        if(this.state.loading) {
+            cards = <Spinner />
+        }
+        if(!this.state.loading){
+            console.log(this.state.data[0])
+            
+        cards = (
+                <Aux>
+                    <div className="col-sm">
+                        { 
+                            this.state.data.map(stats => {
+                            return <Card   
+                                        gameType={stats.GameMode}
+                                        kdratio={stats.KDratio}
+                                        kills={stats.Kills}
+                                        matchesPlayed={stats.MatchesPlayed}
+                                        score={stats.Score}
+                                        winRate={stats.WinRatio}
+                                        wins={stats.Wins} 
+                                        key={stats.KDratio}/>
+                            })
+                        }
+                    </div>
+                </Aux>
+            )
+
         }
 
         return (
             <Aux>
-                {tableStats}
+                <div className="row">
+                    {cards}
+                </div>
             </Aux>
         )
     }

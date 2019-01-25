@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import Layout from '../hoc/Layout/layout'
 import '../styles/custom.scss'
+import Card from '../hoc/card/card_generator'
 
-class Container extends Component {
+class Table extends Component {
     render () {
         return (
             <div className="layout-container">
                 <div className="table" >
-                    <div className="row">
-                        <Layout />
-                    </div>
+                    <Card />
                 </div>
             </div>
         )
@@ -17,4 +15,4 @@ class Container extends Component {
 
 }
 
-export default Container;
+export default Table;
